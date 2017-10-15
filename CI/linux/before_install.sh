@@ -24,6 +24,6 @@ sudo apt-get install -qq qt57declarative
 #setup compiler
 source /opt/qt57/bin/qt57-env.sh
 export CC=${REAL_CC} CXX=${REAL_CXX}
-sudo ln -sf /usr/bin/ccache /usr/lib/ccache/bin/${REAL_CC}
-sudo ln -sf /usr/bin/ccache /usr/lib/ccache/bin/${REAL_CXX}
-ls -la /usr/lib/ccache/bin/
+sudo ln -sf /usr/bin/ccache /usr/lib/ccache/${REAL_CC}
+sudo ln -sf /usr/bin/ccache /usr/lib/ccache/${REAL_CXX}
+ls -la /usr/lib/ccache/
