@@ -4,6 +4,7 @@ os:
 - osx
 dist: trusty
 sudo: required
+cache: ccache
 env:
   matrix:
     - ignore=this
