@@ -47,23 +47,23 @@ for:
 
       - NAME: MSVS 2017 x86 - Release
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        VCMI_GENERATOR: Visual Studio 15 2017
+        VCMI_GENERATOR: Ninja
         VCMI_BUILD_PLATFORM: x86
         VCMI_BUILD_CONFIGURATION: Release
       - NAME: MSVS 2017 x86 - Debug
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        VCMI_GENERATOR: Visual Studio 15 2017
+        VCMI_GENERATOR: Ninja
         VCMI_BUILD_PLATFORM: x86
         VCMI_BUILD_CONFIGURATION: Debug
 
       - NAME: MSVS 2017 x64 - Release
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        VCMI_GENERATOR: Visual Studio 15 2017 Win64
+        VCMI_GENERATOR: Ninja
         VCMI_BUILD_PLATFORM: x64
         VCMI_BUILD_CONFIGURATION: Release
       - NAME: MSVS 2017 x64 - Debug
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        VCMI_GENERATOR: Visual Studio 15 2017 Win64
+        VCMI_GENERATOR: Ninja
         VCMI_BUILD_PLATFORM: x64
         VCMI_BUILD_CONFIGURATION: Debug
 
@@ -100,6 +100,6 @@ for:
         VCMI_BUILD_CONFIGURATION: Release
       - NAME: MSVS 2017 x64 - Release
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        VCMI_GENERATOR: Visual Studio 15 2017 Win64
+        VCMI_GENERATOR: Ninja
         VCMI_BUILD_PLATFORM: x64
         VCMI_BUILD_CONFIGURATION: Release
