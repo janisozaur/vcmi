@@ -25,6 +25,8 @@ sudo apt-get install -qq qt57declarative
 sudo ln -sf /usr/bin/ccache /usr/lib/ccache/${REAL_CC}
 sudo ln -sf /usr/bin/ccache /usr/lib/ccache/${REAL_CXX}
 export PATH=/usr/lib/ccache:$PATH
+# store sloppiness in global config, to avoid storing ccache.conf in Travis' cache each time.
+echo "sloppiness = pch_defines,time_macros" | sudo tee -a /etc/ccache.conf
 
 #setup compiler
 source /opt/qt57/bin/qt57-env.sh
