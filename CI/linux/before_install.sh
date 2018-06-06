@@ -16,10 +16,15 @@ sudo apt-get update -qq
 
 sudo apt-get install -qq $SUPPORT
 sudo apt-get install -qq $PACKAGE
-sudo apt-get install -qq cmake ninja-build libboost1.54-all-dev zlib1g-dev
+sudo apt-get install -qq ccache cmake ninja-build libboost1.54-all-dev zlib1g-dev
 sudo apt-get install -qq libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
 sudo apt-get install -qq libavformat-dev libswscale-dev
 sudo apt-get install -qq qt57declarative
+
+# setup ccache
+sudo ln -sf /usr/bin/ccache /usr/lib/ccache/${REAL_CC}
+sudo ln -sf /usr/bin/ccache /usr/lib/ccache/${REAL_CXX}
+export PATH=/usr/lib/ccache:$PATH
 
 #setup compiler
 source /opt/qt57/bin/qt57-env.sh
