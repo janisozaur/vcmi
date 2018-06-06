@@ -79,8 +79,15 @@ before_script:
   
 script:
 - test $TRAVIS_BRANCH != coverity_scan || exit 0
+- ccache --show-stats > ccache_before
 - ninja
+- ccache --show-stats > ccache_after
+- diff -U100 ccache_before ccache_after || true
 
 after_success:
 - test $TRAVIS_BRANCH != coverity_scan || exit 0
 - . $TRAVIS_BUILD_DIR/CI/$VCMI_PLATFORM/upload_package.sh
+
+cache:
+  directories:
+    - $HOME/.ccache
