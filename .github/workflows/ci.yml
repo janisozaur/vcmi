@@ -21,11 +21,17 @@ jobs:
           vcpkgGitCommitId: 8a583e80da3b72141105da9003175679af2fcb92
           vcpkgTriplet: 'arm64-windows'
           vcpkgArguments: 'libpng boost sdl2 speexdsp zlib'
-      - name: Upload libs
+      - name: show build error
+        if: failure()
+        run: |
+          type "D:\a\vcmi\vcmi\vcpkg\buildtrees\boost-coroutine\build-arm64-windows-rel-out.log"
+      - name: Upload error
         uses: actions/upload-artifact@v2
+        if: failure()
         with:
-          name: libs
-          path: ${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}\\installed\\arm64-windows
+          name: error
+          path: "D:\a\vcmi\vcmi\vcpkg\buildtrees\boost-coroutine\build-arm64-windows-rel-out.log"
+#${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}\\installed\\arm64-windows
 #      - name: 'Run CMake with Ninja'
 #        uses: lukka/run-cmake@v2
 #        with:
