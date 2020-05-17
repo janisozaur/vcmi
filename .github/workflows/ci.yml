@@ -7,6 +7,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+     - name: Install boost-build
+        uses: lukka/run-vcpkg@v2
+        id: runvcpkg-boost
+        with:
+          vcpkgGitCommitId: 2f7a104d4d6f1f3790db929f85a4086aa6973d7f
+          vcpkgTriplet: 'x86-windows'
+          vcpkgArguments: 'boost-build'
       - name: Install vcpkg and packages
         uses: lukka/run-vcpkg@v2
         id: runvcpkg
