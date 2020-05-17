@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-     - name: Install boost-build
+      - name: Install boost-build
         uses: lukka/run-vcpkg@v2
         id: runvcpkg-boost
         with:
