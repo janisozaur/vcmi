@@ -11,14 +11,14 @@ jobs:
         uses: lukka/run-vcpkg@v2
         id: runvcpkg-boost
         with:
-          vcpkgGitCommitId: 2f7a104d4d6f1f3790db929f85a4086aa6973d7f
+          vcpkgGitCommitId: 8a583e80da3b72141105da9003175679af2fcb92
           vcpkgTriplet: 'x86-windows'
           vcpkgArguments: 'boost-build'
       - name: Install vcpkg and packages
         uses: lukka/run-vcpkg@v2
         id: runvcpkg
         with:
-          vcpkgGitCommitId: 2f7a104d4d6f1f3790db929f85a4086aa6973d7f
+          vcpkgGitCommitId: 8a583e80da3b72141105da9003175679af2fcb92
           vcpkgTriplet: 'arm64-windows'
           vcpkgArguments: 'libpng boost sdl2 speexdsp zlib'
       - name: Upload libs
