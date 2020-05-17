@@ -13,7 +13,7 @@ jobs:
         with:
           vcpkgGitCommitId: 2f7a104d4d6f1f3790db929f85a4086aa6973d7f
           vcpkgTriplet: 'arm64-windows'
-          vcpkgArguments: 'libpng openssl sdl2 speexdsp zlib'
+          vcpkgArguments: 'libpng boost sdl2 speexdsp zlib'
       - name: Upload libs
         uses: actions/upload-artifact@v2
         with:
